@@ -1,0 +1,31 @@
+[book]
+authors = ["Documentation Team"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Project Documentation"
+
+[output.html]
+git-repository-url = "https://github.com/example/project"
+edit-url-template = "https://github.com/example/project/edit/main/docs/{path}"
+google-analytics = "UA-XXXXX-Y"
+mathjax-support = true
+
+[output.html.playground]
+editable = true
+copyable = true
+
+[preprocessor.links]
+[preprocessor.index]
+
+[output.linkcheck]
+warning-policy = "warn"
+
+# mdBook is a utility to create modern online books from Markdown files.
+# It is commonly used for Rust project documentation.
+# This config defines the book metadata and HTML output options.
+# Integration with GitHub allows users to easily edit pages.
+# MathJax support enables rendering of mathematical formulas.
+# Interactive code playgrounds can be enabled for supported languages.
+# Preprocessors can transform the content before it is rendered.
+# A link checker ensures there are no broken links in the documentation.

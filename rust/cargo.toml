@@ -1,0 +1,38 @@
+[package]
+name = "vector-cruncher"
+version = "1.2.4"
+edition = "2021"
+authors = ["Rustacean <dev@crates.io>"]
+description = "A blazing fast SIMD-accelerated vector manipulation library for data science."
+documentation = "https://docs.rs/vector-cruncher"
+repository = "https://github.com/example/vector-cruncher"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.28", features = ["full"] }
+anyhow = "1.0"
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+sqlx = { version = "0.7", features = ["runtime-tokio", "sqlite"] }
+
+[dev-dependencies]
+criterion = "0.5"
+tempfile = "3.6"
+
+[features]
+default = ["compression", "tls"]
+compression = ["flate2"]
+tls = ["native-tls"]
+wasm = ["web-sys", "js-sys"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[target.'cfg(unix)'.dependencies]
+nix = "0.26"
+
+[workspace]
+members = ["crates/*"]
+exclude = ["examples/benchmark"]

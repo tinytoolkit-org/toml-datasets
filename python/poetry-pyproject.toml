@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "awesome-python-app"
+version = "2.4.1"
+description = "A comprehensive Python application demonstrating Poetry configurations."
+authors = ["Jane Doe <jane@example.com>", "John Smith <john@example.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/example/awesome-python-app"
+homepage = "https://example.com"
+keywords = ["api", "framework", "automation"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.0"
+fastapi = { version = "^0.95.0", extras = ["all"] }
+pydantic = { version = "^2.0.0", extras = ["email"] }
+sqlalchemy = "^2.0.0"
+alembic = "^1.11.0"
+python-jose = { version = "^3.3.0", extras = ["cryptography"] }
+passlib = { version = "^1.7.4", extras = ["bcrypt"] }
+python-multipart = "^0.0.6"
+uvicorn = "^0.22.0"
+gunicorn = "^20.1.0"
+redis = "^4.5.0"
+celery = { version = "^5.3.0", extras = ["redis"] }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.0"
+pytest-cov = "^4.1.0"
+pytest-asyncio = "^0.21.0"
+httpx = "^0.24.0"
+ruff = "^0.0.270"
+mypy = "^1.3.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+pre-commit = "^3.3.0"
+tox = "^4.5.0"
+
+[tool.poetry.scripts]
+app-serve = "awesome_app.main:run"
+db-migrate = "awesome_app.cli.db:migrate"
+worker-start = "awesome_app.worker:start"
+
+[tool.poetry.plugins."blogtool.parsers"]
+markdown = "some_package.parsers:Markdown"
+json = "some_package.parsers:JSON"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# Extended comments to reach line count target
+# Poetry is a tool for dependency management and packaging in Python.
+# It allows you to declare the libraries your project depends on and it will manage them for you.
+# Poetry offers a lockfile to ensure repeatable installs and can build your project for distribution.
+# This config covers a typical production-grade FastAPI application.
+# Includes database migrations, background workers, and security utilities.
+# Development group includes modern linting and testing tools like ruff and pytest.
+# Plugins allow for extensibility in third-party libraries.

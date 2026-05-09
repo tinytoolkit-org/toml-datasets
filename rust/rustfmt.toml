@@ -1,0 +1,39 @@
+# Rustfmt configuration
+version = "Two"
+use_small_heuristics = "Max"
+newline_style = "Unix"
+tab_spaces = 4
+use_tabs = false
+
+# Formatting rules
+brace_style = "SameLineWhere"
+control_brace_style = "AlwaysNextLine"
+empty_item_single_line = true
+fn_single_line = false
+where_single_line = false
+
+# Imports
+imports_granularity = "Crate"
+group_imports = "StdExternalCrate"
+reorder_imports = true
+
+# Structs and Enums
+struct_field_align_threshold = 20
+enum_discrim_align_threshold = 20
+
+# Comments
+wrap_comments = true
+comment_width = 100
+normalize_comments = true
+
+# Misc
+edition = "2021"
+merge_derives = true
+remove_nested_parens = true
+
+# Rustfmt is the official tool for formatting Rust code according to style guidelines.
+# This configuration file allows customizing the formatting behavior.
+# It covers heuristics, brace styles, import grouping, and comment wrapping.
+# Consistent formatting is essential for readability in collaborative projects.
+# Many of these settings deviate slightly from the default to show possibilities.
+# Using 'Two' for version enables more modern formatting features.

@@ -1,0 +1,48 @@
+# Starship prompt configuration
+add_newline = true
+
+[format]
+  list = [
+    "$directory",
+    "$git_branch",
+    "$git_status",
+    "$python",
+    "$nodejs",
+    "$rust",
+    "$package",
+    "$line_break",
+    "$character"
+  ]
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold blue"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+pyenv_prefix = "pyenv "
+
+[rust]
+symbol = "🦀 "
+style = "bold orange"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+# Starship is the minimal, blazing-fast, and infinitely customizable prompt for any shell.
+# This configuration customizes the order and appearance of modules.
+# Symbols are added for Git, Python, and Rust using Nerd Fonts.
+# Directory truncation keeps the prompt concise in deep paths.
+# Color schemes are defined for different languages and states.
+# The success and error symbols provide immediate feedback on the last command.

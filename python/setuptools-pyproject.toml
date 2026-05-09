@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "classic-setuptools-project"
+version = "1.0.0"
+description = "A project using the modern pyproject.toml interface for setuptools."
+authors = [
+    { name="Old School Coder", email="osc@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools]
+packages = ["my_package", "my_package.utils"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.dat"]
+
+[tool.setuptools.dynamic]
+version = {attr = "my_package.__version__"}
+
+# Setuptools is the venerable build system for Python.
+# Recently, it has adopted the pyproject.toml standard for configuration.
+# This file shows how to define project metadata and dependencies.
+# It also demonstrates how to specify packages to include.
+# Package data inclusion is handled via the tool.setuptools section.
+# Dynamic versioning can still be pulled from a package attribute.
+# This approach replaces the old setup.cfg and setup.py files.
+# It maintains compatibility with modern PEP 517 build frontends.
+# Setuptools remains highly flexible for complex builds involving C extensions.
+# However, this example focuses on a pure Python project.
+# The build-system section specifies the backend required to build the package.
+# This ensures that tools like pip can correctly build the project from source.

@@ -1,0 +1,36 @@
+name = "api-worker"
+main = "src/index.ts"
+compatibility_date = "2023-10-30"
+
+[vars]
+ENVIRONMENT = "production"
+API_VERSION = "v1"
+
+[[kv_namespaces]]
+binding = "USER_SESSIONS"
+id = "a1b2c3d4e5f6g7h8i9j0"
+
+[[r2_buckets]]
+binding = "USER_UPLOADS"
+bucket_name = "my-uploads-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "users-db"
+database_id = "f8e7d6c5b4a39281"
+
+[routes]
+pattern = "api.example.com/*"
+custom_domain = true
+
+[env.staging]
+name = "api-worker-staging"
+vars = { ENVIRONMENT = "staging" }
+
+# Cloudflare Workers configuration file.
+# Defines the worker's name, entry point, and compatibility date.
+# Bindings for KV, R2, and D1 provide access to storage and databases.
+# Routes specify which domains the worker should respond to.
+# Environment overrides allow for staging and development setups.
+# Variables are injected into the worker's global scope.
+# Wrangler is the CLI tool for developing and deploying Cloudflare Workers.

@@ -1,0 +1,58 @@
+# Cloud Monitoring Service Configuration
+title = "Sentinel-IX Production Config"
+environment = "production"
+
+[database]
+server = "192.168.1.100"
+ports = [ 8000, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+
+# Dotted keys for deep structure
+site.auth.method = "oauth2"
+site.auth.provider = "okta"
+site.ui.theme = "dark-industrial"
+site.ui.refresh_rate = 30
+
+# Multi-line strings for documentation or templates
+[banner]
+welcome_msg = """
+Welcome to the Sentinel-IX Monitoring Dashboard.
+Unauthorized access is strictly prohibited.
+Contact sysadmin@internal for credentials.
+"""
+
+# Numbers (Hex, Octal, Binary, Floats, and Specials)
+[system.limits]
+max_memory_hex = 0x7FFFFFFF
+file_permissions = 0o644
+hardware_flags = 0b10110101
+pi_approx = 3.14159
+threshold = -1.25e+4
+neg_inf = -inf
+not_a_number = nan
+
+# Native Date and Time types
+[audit]
+last_run = 2024-04-26T14:30:00Z
+created_at = 2024-04-25
+expiry_time = 18:00:00
+
+# Arrays of Tables (collection of objects)
+[[nodes]]
+name = "alpha-primary"
+ip = "10.0.0.1"
+role = "leader"
+active = true
+
+[[nodes]]
+name = "beta-secondary"
+ip = "10.0.0.2"
+role = "follower"
+active = true
+
+[[nodes]]
+name = "gamma-witness"
+ip = "10.0.0.3"
+role = "arbiter"
+active = false

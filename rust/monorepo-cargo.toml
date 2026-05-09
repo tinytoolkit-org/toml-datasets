@@ -1,0 +1,129 @@
+[workspace]
+members = [
+  "crates/information-0",
+  "crates/sense-1",
+  "crates/system-2",
+  "crates/money-3",
+  "crates/war-4",
+  "crates/head-5",
+  "crates/part-6",
+  "crates/case-7",
+  "crates/family-8",
+  "crates/nation-9",
+  "crates/problem-10",
+  "crates/air-11",
+  "crates/control-12",
+  "crates/teacher-13",
+  "crates/right-14",
+  "crates/kind-15",
+  "crates/air-16",
+  "crates/foot-17",
+  "crates/kid-18",
+  "crates/week-19",
+  "crates/girl-20",
+  "crates/health-21",
+  "crates/water-22",
+  "crates/night-23",
+  "crates/interest-24",
+  "crates/company-25",
+  "crates/member-26",
+  "crates/experience-27",
+  "crates/force-28",
+  "crates/area-29",
+  "crates/number-30",
+  "crates/community-31",
+  "crates/end-32",
+  "crates/story-33",
+  "crates/people-34",
+  "crates/child-35",
+  "crates/thing-36",
+  "crates/moment-37",
+  "crates/student-38",
+  "crates/war-39",
+  "crates/door-40",
+  "crates/guy-41",
+  "crates/foot-42",
+  "crates/change-43",
+  "crates/minute-44",
+  "crates/people-45",
+  "crates/sense-46",
+  "crates/art-47",
+  "crates/room-48",
+  "crates/program-49",
+  "crates/part-50",
+  "crates/force-51",
+  "crates/room-52",
+  "crates/work-53",
+  "crates/car-54",
+  "crates/child-55",
+  "crates/market-56",
+  "crates/service-57",
+  "crates/side-58",
+  "crates/time-59",
+  "crates/community-60",
+  "crates/father-61",
+  "crates/market-62",
+  "crates/woman-63",
+  "crates/teacher-64",
+  "crates/word-65",
+  "crates/control-66",
+  "crates/plan-67",
+  "crates/idea-68",
+  "crates/side-69",
+  "crates/face-70",
+  "crates/home-71",
+  "crates/team-72",
+  "crates/week-73",
+  "crates/health-74",
+  "crates/question-75",
+  "crates/community-76",
+  "crates/business-77",
+  "crates/use-78",
+  "crates/program-79",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+story = "2.8.5"
+parent = "0.25.27"
+story = "2.17.19"
+war = "0.26.19"
+minute = "0.16.21"
+control = "1.30.3"
+end = "1.7.27"
+student = "0.15.12"
+program = "1.8.9"
+end = "1.29.30"
+mother = "2.4.18"
+work = "1.1.4"
+child = "1.18.14"
+health = "0.10.0"
+age = "2.8.25"
+information = "0.20.22"
+nation = "0.23.12"
+company = "2.28.6"
+way = "0.22.9"
+air = "1.29.17"
+change = "1.15.25"
+idea = "1.18.16"
+music = "2.12.25"
+control = "1.30.28"
+work = "1.11.7"
+side = "1.4.0"
+study = "2.14.18"
+information = "1.26.19"
+effort = "2.28.22"
+others = "2.17.21"
+way = "0.27.14"
+kid = "0.26.5"
+person = "0.17.14"
+hand = "2.17.7"
+area = "1.8.5"
+fact = "1.0.20"
+nation = "0.21.5"
+group = "2.5.28"
+week = "0.27.25"
+control = "2.20.0"

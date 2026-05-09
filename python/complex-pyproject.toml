@@ -1,0 +1,121 @@
+[project]
+name = "sample-package"
+version = "0.1.0"
+description = "Sample to exercise large-toml parsing."
+requires-python = ">=3.11"
+dependencies = [
+  "work>=0.4",
+  "role>=5.16",
+  "line>=5.25",
+  "result>=0.17",
+  "city>=3.29",
+  "kid>=2.27",
+  "use>=0.26",
+  "president>=2.0",
+  "family>=4.13",
+  "right>=5.22",
+  "car>=2.9",
+  "room>=4.7",
+  "face>=1.7",
+  "kind>=0.2",
+  "party>=5.22",
+  "back>=5.6",
+  "home>=1.17",
+  "water>=3.3",
+  "night>=1.28",
+  "art>=4.19",
+  "change>=2.4",
+  "fact>=0.17",
+  "market>=3.14",
+  "man>=3.24",
+  "month>=1.23",
+  "eye>=3.10",
+  "reason>=2.18",
+  "job>=2.26",
+  "question>=2.10",
+  "force>=5.18",
+  "week>=3.17",
+  "end>=3.16",
+  "war>=3.11",
+  "kid>=2.5",
+  "life>=5.26",
+  "word>=0.16",
+  "group>=5.20",
+  "question>=3.30",
+  "history>=3.24",
+  "issue>=3.25",
+  "part>=0.12",
+  "home>=2.18",
+  "part>=2.12",
+  "law>=0.29",
+  "father>=2.4",
+  "air>=5.27",
+  "guy>=5.12",
+  "office>=0.21",
+  "business>=3.4",
+  "college>=1.13",
+  "music>=1.25",
+  "country>=3.0",
+  "line>=3.23",
+  "question>=3.18",
+  "education>=0.12",
+  "number>=3.24",
+  "thing>=1.21",
+  "research>=0.25",
+  "effect>=2.18",
+  "point>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "way",
+  "care",
+  "game",
+  "country",
+  "world",
+  "night",
+  "body",
+  "system",
+]
+test = [
+  "program",
+  "age",
+  "level",
+  "minute",
+  "service",
+  "thing",
+  "house",
+  "experience",
+]
+docs = [
+  "reason",
+  "idea",
+  "member",
+  "music",
+  "week",
+  "system",
+  "force",
+  "health",
+  "music",
+]
+lint = [
+  "body",
+  "process",
+  "week",
+  "force",
+  "door",
+  "person",
+  "law",
+  "care",
+  "development",
+  "number",
+  "lot",
+  "life",
+]
+
+[tool.ruff]
+line-length = 100
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]

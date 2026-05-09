@@ -1,0 +1,52 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "My Professional Blog"
+theme = "ananke"
+
+[params]
+  description = "A blog about technology, design, and software engineering."
+  author = "Jane Doe"
+  github = "https://github.com/janedoe"
+  twitter = "https://twitter.com/janedoe"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Articles"
+  url = "/posts/"
+  weight = 20
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Hugo is a popular static site generator written in Go.
+# It is known for its incredible speed and flexibility.
+# This configuration file defines the site structure and metadata.
+# Params section provides variables accessible in templates.
+# Menu configuration sets up the main navigation bar.
+# Taxonomies allow for flexible content organization.
+# Markup section configures the Markdown renderer (Goldmark).
+# Multiple output formats can be generated for the homepage.

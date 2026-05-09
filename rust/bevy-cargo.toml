@@ -1,0 +1,45 @@
+[package]
+name = "bevy-game-engine-project"
+version = "0.1.0"
+edition = "2021"
+description = "A 3D game prototype using the Bevy engine."
+
+[dependencies]
+bevy = { version = "0.13", features = ["dynamic_linking"] }
+bevy_rapier3d = { version = "0.25", features = ["simd-stable", "debug-render-3d"] }
+bevy_asset_loader = { version = "0.20", features = ["standard_dynamic_assets"] }
+leafwing-input-manager = "0.13"
+serde = { version = "1.0", features = ["derive"] }
+rand = "0.8"
+
+[features]
+default = ["dev"]
+dev = [
+    "bevy/bevy_winit",
+    "bevy/bevy_render",
+    "bevy/bevy_png",
+    "bevy/render",
+    "bevy/x11",
+]
+release = [
+    "bevy/bevy_winit",
+    "bevy/bevy_render",
+    "bevy/bevy_png",
+    "bevy/render",
+]
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+# Bevy is a refreshingly simple data-driven game engine built in Rust.
+# It uses the Entity Component System (ECS) pattern.
+# This config enables dynamic linking for faster iteration during development.
+# Rapier3D provides physics simulation.
+# Leafwing-input-manager simplifies handling complex input patterns.
+# The features table allows toggling between development and release builds.
+# Development profile optimizes dependencies for speed while keeping the main crate debuggable.
+# Bevy is highly modular, allowing you to include only the features you need.
+# This setup is ideal for rapid prototyping of 3D games.

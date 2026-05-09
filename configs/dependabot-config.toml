@@ -1,0 +1,33 @@
+# Note: Real Dependabot configuration typically uses YAML (.github/dependabot.yml).
+# This is an illustrative TOML representation for compatibility testing.
+
+version = 2
+
+[[updates]]
+package-ecosystem = "pip"
+directory = "/"
+schedule = { interval = "daily" }
+open-pull-requests-limit = 10
+allow = [{ dependency-type = "direct" }]
+ignore = [
+    { dependency-name = "django", versions = ["5.0.0"] }
+]
+
+[[updates]]
+package-ecosystem = "cargo"
+directory = "/"
+schedule = { interval = "weekly" }
+groups = { "rust-dependencies" = { patterns = ["*"] } }
+
+[[updates]]
+package-ecosystem = "npm"
+directory = "/frontend"
+schedule = { interval = "monthly" }
+
+# Dependabot keeps your dependencies up to date automatically.
+# It checks for new versions and opens pull requests.
+# This TOML version demonstrates how ecosystems like pip, cargo, and npm are configured.
+# Intervals can be daily, weekly, or monthly.
+# Pull request limits prevent being overwhelmed by updates.
+# Specific dependencies or versions can be ignored.
+# Grouping updates helps reduce the number of pull requests.

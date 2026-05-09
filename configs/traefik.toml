@@ -1,0 +1,41 @@
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+    [entryPoints.web.http.redirections.entryPoint]
+      to = "websecure"
+      scheme = "https"
+
+  [entryPoints.websecure]
+    address = ":443"
+
+[providers]
+  [providers.docker]
+    exposedByDefault = false
+  [providers.file]
+    filename = "/etc/traefik/dynamic_conf.toml"
+
+[api]
+  dashboard = true
+
+[certificatesResolvers.myresolver.acme]
+  email = "admin@example.com"
+  storage = "acme.json"
+  [certificatesResolvers.myresolver.acme.httpChallenge]
+    entryPoint = "web"
+
+[log]
+  level = "INFO"
+  format = "json"
+
+[accessLog]
+  filePath = "/var/log/traefik/access.log"
+
+# Traefik is a modern HTTP reverse proxy and load balancer.
+# It is designed to deploy microservices with ease.
+# This configuration sets up entrypoints for HTTP and HTTPS.
+# Automatic HTTP to HTTPS redirection is configured.
+# Docker provider is enabled but requires explicit labels.
+# File provider allows for additional dynamic configuration.
+# ACME resolver handles automatic SSL certificates via Let's Encrypt.
+# API dashboard is enabled for monitoring.
+# Structured logging in JSON format is used for better observability.

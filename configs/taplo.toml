@@ -1,0 +1,35 @@
+# Taplo configuration for TOML files
+include = ["**/*.toml"]
+exclude = ["**/node_modules/**"]
+
+[formatting]
+align_entries = true
+align_comments = true
+array_trailing_comma = true
+array_auto_expand = true
+array_auto_collapse = false
+compact_arrays = false
+compact_inline_tables = false
+column_width = 80
+indent_tables = true
+indent_entries = false
+indent_string = "  "
+trailing_newline = true
+reorder_keys = true
+
+[linter]
+no_redefinition = true
+no_unknown_keys = true
+
+[[rule]]
+include = ["**/Cargo.toml"]
+[rule.formatting]
+reorder_keys = false
+
+# Taplo is a versatile TOML toolkit written in Rust.
+# It provides formatting, linting, and language server features.
+# This configuration file defines the formatting style for all TOML files.
+# It includes alignment options for entries and comments.
+# Key reordering is enabled by default but disabled for Cargo.toml files.
+# Linting rules catch common errors like key redefinitions.
+# Taplo ensures your TOML files are clean, consistent, and error-free.

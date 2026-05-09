@@ -1,0 +1,43 @@
+[package]
+name = "axum-microservice"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rust Dev <dev@example.com>"]
+description = "A high-performance microservice built with Axum and Tokio."
+
+[dependencies]
+axum = { version = "0.7", features = ["macros"] }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"] }
+tower = { version = "0.4", features = ["util", "timeout", "load-shed", "limit"] }
+tower-http = { version = "0.5", features = ["trace", "compression-full", "cors"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+config = "0.13"
+anyhow = "1.0"
+thiserror = "1.0"
+validator = { version = "0.16", features = ["derive"] }
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+hyper = { version = "1.0", features = ["full"] }
+mime = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+# This Cargo.toml defines a modern Rust web service.
+# Axum is a web application framework that focuses on ergonomics and modularity.
+# Tokio provides the asynchronous runtime.
+# SQLx is used for compile-time checked SQL queries against PostgreSQL.
+# Tower and Tower-HTTP provide middleware for tracing, CORS, and compression.
+# Tracing is used for structured logging.
+# Anyhow and Thiserror manage error handling gracefully.
+# The release profile is optimized for binary size and performance.

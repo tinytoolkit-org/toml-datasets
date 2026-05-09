@@ -1,0 +1,63 @@
+# This file contains deliberate syntax errors for testing.
+title = "Broken TOML File"
+
+# ERROR: Unclosed string
+description = "This string is never closed
+
+# ERROR: Unterminated array
+numbers = [1, 2, 3, 4, 5
+
+# ERROR: Conflicting redefinitions of the same key
+duplicate_key = 100
+duplicate_key = 200
+
+# ERROR: Mismatched brackets
+table = { key = "value" ]
+
+# ERROR: Bare numbers as keys
+123 = "numeric key is invalid"
+
+# ERROR: Smart quotes instead of regular quotes
+smart_quotes = “invalid”
+
+# ERROR: Comment without hash
+This is a comment without a hash symbol at the start
+
+# ERROR: Invalid escape sequence
+escape = "Invalid \z escape"
+
+# ERROR: Missing equals sign
+missing_equals "oops"
+
+# ERROR: Trailing comma in table
+trailing_comma = { a = 1, }
+
+# ERROR: Inline table on multiple lines
+inline_table = {
+    a = 1
+}
+
+# Some valid lines to fill up space
+author = "Tester"
+version = "1.0.0"
+valid_key = true
+
+# More padding to reach 50 lines
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# 11
+# 12
+# 13
+# 14
+# 15
+# 16
+# 17
+# 18
